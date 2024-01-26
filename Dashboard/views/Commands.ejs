@@ -1,0 +1,913 @@
+<%- include('./partes/head') %>
+<%- include('./partes/indes&css') %>
+<%- include('./partes/indes&js') %>
+<%- include('./partes/loader') %>
+<style>
+    body {
+        color: #fff;
+    }
+    * {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+</style>
+
+    <br><br><br><br><br><br>
+    
+    <div><h2 class="mb-10 tw-text-3xl" style="font-size: 50px;">ProtectionPlusBot Commands</h2>
+        <br>
+        <p class="landing-para tw-text-sm tw-font-normal tw-text-gray-200">Are you new to ProtectionPlusBot and want to know about all the commands and their usage? You've come to the right place!</p></div>
+
+        <br><br>
+    <div class="navbar">
+        <a href="#" onclick="openPage('home')" class="active">All</a>
+        <a href="#" onclick="openPage('General')">General</a>
+        <a href="#" onclick="openPage('Info')">Info</a>
+        <a href="#" onclick="openPage('Moderation')">Moderation</a>
+      </div>
+      
+      <div class="content" id="home">
+       
+        <div class="Collapsible">
+            <span id="collapsible-trigger-1" class="Collapsible__trigger is-closed" aria-expanded="false" aria-disabled="false" aria-controls="collapsible-content-1" role="button" onclick="toggleCollapsible('collapsible-content-1', this)">
+                <div class="cmdShow">
+                    <h5>
+                        <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px;">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.11111 0C1.39289 0 0 1.39289 0 3.11111V24.8889C0 26.6072 1.39289 28 3.11111 28H24.8889C26.6072 28 28 26.6072 28 24.8889V3.11111C28 1.39289 26.6072 0 24.8889 0H3.11111ZM21.6214 8.42207L19.4216 6.22219L6.22222 19.4216L8.4221 21.6214L21.6214 8.42207Z" fill="#333645" style="transition: fill 0.2s ease-in-out 0s;"></path>
+                        </svg>
+                        ban - ban user from the server
+                    </h5>
+                    <i class="arrow-icon fa-solid fa-angle-down"></i>
+
+                </div>
+            </span>
+            <div id="collapsible-content-1" class="Collapsible__contentOuter" role="region" aria-labelledby="collapsible-trigger-1" style="height: 0px; transition: height 400ms linear 0s; overflow: hidden;">
+                <div class="Collapsible__contentInner">
+                    <div class="cmdDis">
+                        <div class="line"></div>
+                        <label class="usage">Usage</label>
+                        <main class="usageDisplay">/ban <small class="discordmention">[user] (reason)</small> 
+                            </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+<br>
+
+
+        <div class="Collapsible">
+            <span id="collapsible-trigger-1" class="Collapsible__trigger is-closed" aria-expanded="false" aria-disabled="false" aria-controls="collapsible-content-1" role="button" onclick="toggleCollapsible('collapsible-content-1', this)">
+                <div class="cmdShow">
+                    <h5>
+                        <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px;" class="a7a1000">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.11111 0C1.39289 0 0 1.39289 0 3.11111V24.8889C0 26.6072 1.39289 28 3.11111 28H24.8889C26.6072 28 28 26.6072 28 24.8889V3.11111C28 1.39289 26.6072 0 24.8889 0H3.11111ZM21.6214 8.42207L19.4216 6.22219L6.22222 19.4216L8.4221 21.6214L21.6214 8.42207Z" fill="#333645" style="transition: fill 0.2s ease-in-out 0s;"></path>
+                        </svg>
+                        unban - remove ban of user
+                    </h5>
+                    <i class="arrow-icon fa-solid fa-angle-down"></i>
+
+                </div>
+            </span>
+           
+            <div id="collapsible-content-1" class="Collapsible__contentOuter" role="region" aria-labelledby="collapsible-trigger-1" style="height: 0px; transition: height 400ms linear 0s; overflow: hidden;">
+                <div class="Collapsible__contentInner">
+                    <div class="cmdDis">
+                        <div class="line"></div>
+                        <label class="usage">Usage</label>
+                        <main class="usageDisplay">/unban<small class="discordmention">[user] (reason)</small> 
+                            </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <br>
+
+
+        <div class="Collapsible">
+            <span id="collapsible-trigger-1" class="Collapsible__trigger is-closed" aria-expanded="false" aria-disabled="false" aria-controls="collapsible-content-1" role="button" onclick="toggleCollapsible('collapsible-content-1', this)">
+                <div class="cmdShow">
+                    <h5>
+                        <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px;" class="a7a1000">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.11111 0C1.39289 0 0 1.39289 0 3.11111V24.8889C0 26.6072 1.39289 28 3.11111 28H24.8889C26.6072 28 28 26.6072 28 24.8889V3.11111C28 1.39289 26.6072 0 24.8889 0H3.11111ZM21.6214 8.42207L19.4216 6.22219L6.22222 19.4216L8.4221 21.6214L21.6214 8.42207Z" fill="#333645" style="transition: fill 0.2s ease-in-out 0s;"></path>
+                        </svg>
+                        kick - kick user from the server
+                    </h5>
+                    <i class="arrow-icon fa-solid fa-angle-down"></i>
+
+                </div>
+            </span>
+           
+            <div id="collapsible-content-1" class="Collapsible__contentOuter" role="region" aria-labelledby="collapsible-trigger-1" style="height: 0px; transition: height 400ms linear 0s; overflow: hidden;">
+                <div class="Collapsible__contentInner">
+                    <div class="cmdDis">
+                        <div class="line"></div>
+                        <label class="usage">Usage</label>
+                        <main class="usageDisplay">/kick<small class="discordmention">[user] (reason)</small> 
+                            </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <br>
+
+
+        <div class="Collapsible">
+            <span id="collapsible-trigger-1" class="Collapsible__trigger is-closed" aria-expanded="false" aria-disabled="false" aria-controls="collapsible-content-1" role="button" onclick="toggleCollapsible('collapsible-content-1', this)">
+                <div class="cmdShow">
+                    <h5>
+                        <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px;" class="a7a1000">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.11111 0C1.39289 0 0 1.39289 0 3.11111V24.8889C0 26.6072 1.39289 28 3.11111 28H24.8889C26.6072 28 28 26.6072 28 24.8889V3.11111C28 1.39289 26.6072 0 24.8889 0H3.11111ZM21.6214 8.42207L19.4216 6.22219L6.22222 19.4216L8.4221 21.6214L21.6214 8.42207Z" fill="#333645" style="transition: fill 0.2s ease-in-out 0s;"></path>
+                        </svg>
+                        mute - mute user from text channel
+                    </h5>
+                    <i class="arrow-icon fa-solid fa-angle-down"></i>
+
+                </div>
+            </span>
+           
+            <div id="collapsible-content-1" class="Collapsible__contentOuter" role="region" aria-labelledby="collapsible-trigger-1" style="height: 0px; transition: height 400ms linear 0s; overflow: hidden;">
+                <div class="Collapsible__contentInner">
+                    <div class="cmdDis">
+                        <div class="line"></div>
+                        <label class="usage">Usage</label>
+                        <main class="usageDisplay">/mute<small class="discordmention"> [user] (time ends with m,h,d,mo,y) (reason)
+
+                        </small> 
+                            </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <br>
+
+
+        <div class="Collapsible">
+            <span id="collapsible-trigger-1" class="Collapsible__trigger is-closed" aria-expanded="false" aria-disabled="false" aria-controls="collapsible-content-1" role="button" onclick="toggleCollapsible('collapsible-content-1', this)">
+                <div class="cmdShow">
+                    <h5>
+                        <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px;" class="a7a1000">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.11111 0C1.39289 0 0 1.39289 0 3.11111V24.8889C0 26.6072 1.39289 28 3.11111 28H24.8889C26.6072 28 28 26.6072 28 24.8889V3.11111C28 1.39289 26.6072 0 24.8889 0H3.11111ZM21.6214 8.42207L19.4216 6.22219L6.22222 19.4216L8.4221 21.6214L21.6214 8.42207Z" fill="#333645" style="transition: fill 0.2s ease-in-out 0s;"></path>
+                        </svg>
+                        unmute - unmute user from text channel
+                    </h5>
+                    <i class="arrow-icon fa-solid fa-angle-down"></i>
+
+                </div>
+            </span>
+           
+            <div id="collapsible-content-1" class="Collapsible__contentOuter" role="region" aria-labelledby="collapsible-trigger-1" style="height: 0px; transition: height 400ms linear 0s; overflow: hidden;">
+                <div class="Collapsible__contentInner">
+                    <div class="cmdDis">
+                        <div class="line"></div>
+                        <label class="usage">Usage</label>
+                        <main class="usageDisplay">/unmute<small class="discordmention"> [user] 
+
+                        </small> 
+                            </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <br>
+
+
+        <div class="Collapsible">
+            <span id="collapsible-trigger-1" class="Collapsible__trigger is-closed" aria-expanded="false" aria-disabled="false" aria-controls="collapsible-content-1" role="button" onclick="toggleCollapsible('collapsible-content-1', this)">
+                <div class="cmdShow">
+                    <h5>
+                        <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px;" class="a7a1000">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.11111 0C1.39289 0 0 1.39289 0 3.11111V24.8889C0 26.6072 1.39289 28 3.11111 28H24.8889C26.6072 28 28 26.6072 28 24.8889V3.11111C28 1.39289 26.6072 0 24.8889 0H3.11111ZM21.6214 8.42207L19.4216 6.22219L6.22222 19.4216L8.4221 21.6214L21.6214 8.42207Z" fill="#333645" style="transition: fill 0.2s ease-in-out 0s;"></path>
+                        </svg>
+                        clear - delete messages on channel
+                    </h5>
+                    <i class="arrow-icon fa-solid fa-angle-down"></i>
+
+                </div>
+            </span>
+           
+            <div id="collapsible-content-1" class="Collapsible__contentOuter" role="region" aria-labelledby="collapsible-trigger-1" style="height: 0px; transition: height 400ms linear 0s; overflow: hidden;">
+                <div class="Collapsible__contentInner">
+                    <div class="cmdDis">
+                        <div class="line"></div>
+                        <label class="usage">Usage</label>
+                        <main class="usageDisplay">/clear<small class="discordmention">(number of messages)
+
+                        </small> 
+                            </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <br>
+
+
+        <div class="Collapsible">
+            <span id="collapsible-trigger-1" class="Collapsible__trigger is-closed" aria-expanded="false" aria-disabled="false" aria-controls="collapsible-content-1" role="button" onclick="toggleCollapsible('collapsible-content-1', this)">
+                <div class="cmdShow">
+                    <h5>
+                        <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px;" class="a7a1000">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.11111 0C1.39289 0 0 1.39289 0 3.11111V24.8889C0 26.6072 1.39289 28 3.11111 28H24.8889C26.6072 28 28 26.6072 28 24.8889V3.11111C28 1.39289 26.6072 0 24.8889 0H3.11111ZM21.6214 8.42207L19.4216 6.22219L6.22222 19.4216L8.4221 21.6214L21.6214 8.42207Z" fill="#333645" style="transition: fill 0.2s ease-in-out 0s;"></path>
+                        </svg>
+                        lock - lock text channel
+                    </h5>
+                    <i class="arrow-icon fa-solid fa-angle-down"></i>
+
+                </div>
+            </span>
+           
+            <div id="collapsible-content-1" class="Collapsible__contentOuter" role="region" aria-labelledby="collapsible-trigger-1" style="height: 0px; transition: height 400ms linear 0s; overflow: hidden;">
+                <div class="Collapsible__contentInner">
+                    <div class="cmdDis">
+                        <div class="line"></div>
+                        <label class="usage">Usage</label>
+                        <main class="usageDisplay">/lock<small class="discordmention">(channel) (reason)
+
+                        </small> 
+                            </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <br>
+
+
+        <div class="Collapsible">
+            <span id="collapsible-trigger-1" class="Collapsible__trigger is-closed" aria-expanded="false" aria-disabled="false" aria-controls="collapsible-content-1" role="button" onclick="toggleCollapsible('collapsible-content-1', this)">
+                <div class="cmdShow">
+                    <h5>
+                        <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px;" class="a7a1000">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.11111 0C1.39289 0 0 1.39289 0 3.11111V24.8889C0 26.6072 1.39289 28 3.11111 28H24.8889C26.6072 28 28 26.6072 28 24.8889V3.11111C28 1.39289 26.6072 0 24.8889 0H3.11111ZM21.6214 8.42207L19.4216 6.22219L6.22222 19.4216L8.4221 21.6214L21.6214 8.42207Z" fill="#333645" style="transition: fill 0.2s ease-in-out 0s;"></path>
+                        </svg>
+                        unlock - unlock text channel
+                    </h5>
+                    <i class="arrow-icon fa-solid fa-angle-down"></i>
+
+                </div>
+            </span>
+           
+            <div id="collapsible-content-1" class="Collapsible__contentOuter" role="region" aria-labelledby="collapsible-trigger-1" style="height: 0px; transition: height 400ms linear 0s; overflow: hidden;">
+                <div class="Collapsible__contentInner">
+                    <div class="cmdDis">
+                        <div class="line"></div>
+                        <label class="usage">Usage</label>
+                        <main class="usageDisplay">/unlock<small class="discordmention">(channel)
+
+                        </small> 
+                            </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <br>
+
+
+        <div class="Collapsible">
+            <span id="collapsible-trigger-1" class="Collapsible__trigger is-closed" aria-expanded="false" aria-disabled="false" aria-controls="collapsible-content-1" role="button" onclick="toggleCollapsible('collapsible-content-1', this)">
+                <div class="cmdShow">
+                    <h5>
+                        <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px;" class="a7a1000">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.11111 0C1.39289 0 0 1.39289 0 3.11111V24.8889C0 26.6072 1.39289 28 3.11111 28H24.8889C26.6072 28 28 26.6072 28 24.8889V3.11111C28 1.39289 26.6072 0 24.8889 0H3.11111ZM21.6214 8.42207L19.4216 6.22219L6.22222 19.4216L8.4221 21.6214L21.6214 8.42207Z" fill="#333645" style="transition: fill 0.2s ease-in-out 0s;"></path>
+                        </svg>
+                        server - server information
+                    </h5>
+                    <i class="arrow-icon fa-solid fa-angle-down"></i>
+
+                </div>
+            </span>
+           
+            <div id="collapsible-content-1" class="Collapsible__contentOuter" role="region" aria-labelledby="collapsible-trigger-1" style="height: 0px; transition: height 400ms linear 0s; overflow: hidden;">
+                <div class="Collapsible__contentInner">
+                    <div class="cmdDis">
+                        <div class="line"></div>
+                        <label class="usage">Usage</label>
+                        <main class="usageDisplay">/server<small class="discordmention">
+
+                        </small> 
+                            </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+
+        <div class="Collapsible">
+            <span id="collapsible-trigger-1" class="Collapsible__trigger is-closed" aria-expanded="false" aria-disabled="false" aria-controls="collapsible-content-1" role="button" onclick="toggleCollapsible('collapsible-content-1', this)">
+                <div class="cmdShow">
+                    <h5>
+                        <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px;" class="a7a1000">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.11111 0C1.39289 0 0 1.39289 0 3.11111V24.8889C0 26.6072 1.39289 28 3.11111 28H24.8889C26.6072 28 28 26.6072 28 24.8889V3.11111C28 1.39289 26.6072 0 24.8889 0H3.11111ZM21.6214 8.42207L19.4216 6.22219L6.22222 19.4216L8.4221 21.6214L21.6214 8.42207Z" fill="#333645" style="transition: fill 0.2s ease-in-out 0s;"></path>
+                        </svg>
+                        user - user information
+                    </h5>
+                    <i class="arrow-icon fa-solid fa-angle-down"></i>
+
+                </div>
+            </span>
+           
+            <div id="collapsible-content-1" class="Collapsible__contentOuter" role="region" aria-labelledby="collapsible-trigger-1" style="height: 0px; transition: height 400ms linear 0s; overflow: hidden;">
+                <div class="Collapsible__contentInner">
+                    <div class="cmdDis">
+                        <div class="line"></div>
+                        <label class="usage">Usage</label>
+                        <main class="usageDisplay">/user<small class="discordmention">[user]
+
+                        </small> 
+                            </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+
+        <div class="Collapsible">
+            <span id="collapsible-trigger-1" class="Collapsible__trigger is-closed" aria-expanded="false" aria-disabled="false" aria-controls="collapsible-content-1" role="button" onclick="toggleCollapsible('collapsible-content-1', this)">
+                <div class="cmdShow">
+                    <h5>
+                        <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px;" class="a7a1000">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.11111 0C1.39289 0 0 1.39289 0 3.11111V24.8889C0 26.6072 1.39289 28 3.11111 28H24.8889C26.6072 28 28 26.6072 28 24.8889V3.11111C28 1.39289 26.6072 0 24.8889 0H3.11111ZM21.6214 8.42207L19.4216 6.22219L6.22222 19.4216L8.4221 21.6214L21.6214 8.42207Z" fill="#333645" style="transition: fill 0.2s ease-in-out 0s;"></path>
+                        </svg>
+                        avatar - avatar user
+                    </h5>
+                    <i class="arrow-icon fa-solid fa-angle-down"></i>
+
+                </div>
+            </span>
+           
+            <div id="collapsible-content-1" class="Collapsible__contentOuter" role="region" aria-labelledby="collapsible-trigger-1" style="height: 0px; transition: height 400ms linear 0s; overflow: hidden;">
+                <div class="Collapsible__contentInner">
+                    <div class="cmdDis">
+                        <div class="line"></div>
+                        <label class="usage">Usage</label>
+                        <main class="usageDisplay">/avatar<small class="discordmention">[user]
+
+                        </small> 
+                            </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+
+        <div class="Collapsible">
+            <span id="collapsible-trigger-1" class="Collapsible__trigger is-closed" aria-expanded="false" aria-disabled="false" aria-controls="collapsible-content-1" role="button" onclick="toggleCollapsible('collapsible-content-1', this)">
+                <div class="cmdShow">
+                    <h5>
+                        <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px;" class="a7a1000">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.11111 0C1.39289 0 0 1.39289 0 3.11111V24.8889C0 26.6072 1.39289 28 3.11111 28H24.8889C26.6072 28 28 26.6072 28 24.8889V3.11111C28 1.39289 26.6072 0 24.8889 0H3.11111ZM21.6214 8.42207L19.4216 6.22219L6.22222 19.4216L8.4221 21.6214L21.6214 8.42207Z" fill="#333645" style="transition: fill 0.2s ease-in-out 0s;"></path>
+                        </svg>
+                        warn - warn user
+                    </h5>
+                    <i class="arrow-icon fa-solid fa-angle-down"></i>
+
+                </div>
+            </span>
+           
+            <div id="collapsible-content-1" class="Collapsible__contentOuter" role="region" aria-labelledby="collapsible-trigger-1" style="height: 0px; transition: height 400ms linear 0s; overflow: hidden;">
+                <div class="Collapsible__contentInner">
+                    <div class="cmdDis">
+                        <div class="line"></div>
+                        <label class="usage">Usage</label>
+                        <main class="usageDisplay">/warn<small class="discordmention">[user] (reason)
+
+                        </small> 
+                            </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+
+        <div class="Collapsible">
+            <span id="collapsible-trigger-1" class="Collapsible__trigger is-closed" aria-expanded="false" aria-disabled="false" aria-controls="collapsible-content-1" role="button" onclick="toggleCollapsible('collapsible-content-1', this)">
+                <div class="cmdShow">
+                    <h5>
+                        <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px;" class="a7a1000">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.11111 0C1.39289 0 0 1.39289 0 3.11111V24.8889C0 26.6072 1.39289 28 3.11111 28H24.8889C26.6072 28 28 26.6072 28 24.8889V3.11111C28 1.39289 26.6072 0 24.8889 0H3.11111ZM21.6214 8.42207L19.4216 6.22219L6.22222 19.4216L8.4221 21.6214L21.6214 8.42207Z" fill="#333645" style="transition: fill 0.2s ease-in-out 0s;"></path>
+                        </svg>
+                        ping - ping bot
+                    </h5>
+                    <i class="arrow-icon fa-solid fa-angle-down"></i>
+
+                </div>
+            </span>
+           
+            <div id="collapsible-content-1" class="Collapsible__contentOuter" role="region" aria-labelledby="collapsible-trigger-1" style="height: 0px; transition: height 400ms linear 0s; overflow: hidden;">
+                <div class="Collapsible__contentInner">
+                    <div class="cmdDis">
+                        <div class="line"></div>
+                        <label class="usage">Usage</label>
+                        <main class="usageDisplay">/ping<small class="discordmention">
+
+                        </small> 
+                            </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      
+      <div class="content" id="General" style="display: none;">
+        <h2>About</h2>
+        <p>Learn more about us.</p>
+      </div>
+      
+      <div class="content" id="Info" style="display: none;">
+
+
+        <div class="Collapsible">
+            <span id="collapsible-trigger-1" class="Collapsible__trigger is-closed" aria-expanded="false" aria-disabled="false" aria-controls="collapsible-content-1" role="button" onclick="toggleCollapsible('collapsible-content-1', this)">
+                <div class="cmdShow">
+                    <h5>
+                        <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px;" class="a7a1000">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.11111 0C1.39289 0 0 1.39289 0 3.11111V24.8889C0 26.6072 1.39289 28 3.11111 28H24.8889C26.6072 28 28 26.6072 28 24.8889V3.11111C28 1.39289 26.6072 0 24.8889 0H3.11111ZM21.6214 8.42207L19.4216 6.22219L6.22222 19.4216L8.4221 21.6214L21.6214 8.42207Z" fill="#333645" style="transition: fill 0.2s ease-in-out 0s;"></path>
+                        </svg>
+                        ping - ping bot
+                    </h5>
+                    <i class="arrow-icon fa-solid fa-angle-down"></i>
+
+                </div>
+            </span>
+           
+            <div id="collapsible-content-1" class="Collapsible__contentOuter" role="region" aria-labelledby="collapsible-trigger-1" style="height: 0px; transition: height 400ms linear 0s; overflow: hidden;">
+                <div class="Collapsible__contentInner">
+                    <div class="cmdDis">
+                        <div class="line"></div>
+                        <label class="usage">Usage</label>
+                        <main class="usageDisplay">/ping<small class="discordmention">
+
+                        </small> 
+                            </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+
+        <div class="Collapsible">
+            <span id="collapsible-trigger-1" class="Collapsible__trigger is-closed" aria-expanded="false" aria-disabled="false" aria-controls="collapsible-content-1" role="button" onclick="toggleCollapsible('collapsible-content-1', this)">
+                <div class="cmdShow">
+                    <h5>
+                        <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px;" class="a7a1000">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.11111 0C1.39289 0 0 1.39289 0 3.11111V24.8889C0 26.6072 1.39289 28 3.11111 28H24.8889C26.6072 28 28 26.6072 28 24.8889V3.11111C28 1.39289 26.6072 0 24.8889 0H3.11111ZM21.6214 8.42207L19.4216 6.22219L6.22222 19.4216L8.4221 21.6214L21.6214 8.42207Z" fill="#333645" style="transition: fill 0.2s ease-in-out 0s;"></path>
+                        </svg>
+                        server - server information
+                    </h5>
+                    <i class="arrow-icon fa-solid fa-angle-down"></i>
+
+                </div>
+            </span>
+           
+            <div id="collapsible-content-1" class="Collapsible__contentOuter" role="region" aria-labelledby="collapsible-trigger-1" style="height: 0px; transition: height 400ms linear 0s; overflow: hidden;">
+                <div class="Collapsible__contentInner">
+                    <div class="cmdDis">
+                        <div class="line"></div>
+                        <label class="usage">Usage</label>
+                        <main class="usageDisplay">/server<small class="discordmention">
+
+                        </small> 
+                            </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+
+        <div class="Collapsible">
+            <span id="collapsible-trigger-1" class="Collapsible__trigger is-closed" aria-expanded="false" aria-disabled="false" aria-controls="collapsible-content-1" role="button" onclick="toggleCollapsible('collapsible-content-1', this)">
+                <div class="cmdShow">
+                    <h5>
+                        <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px;" class="a7a1000">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.11111 0C1.39289 0 0 1.39289 0 3.11111V24.8889C0 26.6072 1.39289 28 3.11111 28H24.8889C26.6072 28 28 26.6072 28 24.8889V3.11111C28 1.39289 26.6072 0 24.8889 0H3.11111ZM21.6214 8.42207L19.4216 6.22219L6.22222 19.4216L8.4221 21.6214L21.6214 8.42207Z" fill="#333645" style="transition: fill 0.2s ease-in-out 0s;"></path>
+                        </svg>
+                        user - user information
+                    </h5>
+                    <i class="arrow-icon fa-solid fa-angle-down"></i>
+
+                </div>
+            </span>
+           
+            <div id="collapsible-content-1" class="Collapsible__contentOuter" role="region" aria-labelledby="collapsible-trigger-1" style="height: 0px; transition: height 400ms linear 0s; overflow: hidden;">
+                <div class="Collapsible__contentInner">
+                    <div class="cmdDis">
+                        <div class="line"></div>
+                        <label class="usage">Usage</label>
+                        <main class="usageDisplay">/user<small class="discordmention">[user]
+
+                        </small> 
+                            </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+
+        <div class="Collapsible">
+            <span id="collapsible-trigger-1" class="Collapsible__trigger is-closed" aria-expanded="false" aria-disabled="false" aria-controls="collapsible-content-1" role="button" onclick="toggleCollapsible('collapsible-content-1', this)">
+                <div class="cmdShow">
+                    <h5>
+                        <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px;" class="a7a1000">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.11111 0C1.39289 0 0 1.39289 0 3.11111V24.8889C0 26.6072 1.39289 28 3.11111 28H24.8889C26.6072 28 28 26.6072 28 24.8889V3.11111C28 1.39289 26.6072 0 24.8889 0H3.11111ZM21.6214 8.42207L19.4216 6.22219L6.22222 19.4216L8.4221 21.6214L21.6214 8.42207Z" fill="#333645" style="transition: fill 0.2s ease-in-out 0s;"></path>
+                        </svg>
+                        avatar - avatar user
+                    </h5>
+                    <i class="arrow-icon fa-solid fa-angle-down"></i>
+
+                </div>
+            </span>
+           
+            <div id="collapsible-content-1" class="Collapsible__contentOuter" role="region" aria-labelledby="collapsible-trigger-1" style="height: 0px; transition: height 400ms linear 0s; overflow: hidden;">
+                <div class="Collapsible__contentInner">
+                    <div class="cmdDis">
+                        <div class="line"></div>
+                        <label class="usage">Usage</label>
+                        <main class="usageDisplay">/avatar<small class="discordmention">[user]
+
+                        </small> 
+                            </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      
+      <div class="content" id="Moderation" style="display: none;">
+        <h4 style="font-size: 20px;">Moderation</h4>
+        
+        <div class="Collapsible">
+            <span id="collapsible-trigger-1" class="Collapsible__trigger is-closed" aria-expanded="false" aria-disabled="false" aria-controls="collapsible-content-1" role="button" onclick="toggleCollapsible('collapsible-content-1', this)">
+                <div class="cmdShow">
+                    <h5>
+                        <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px;">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.11111 0C1.39289 0 0 1.39289 0 3.11111V24.8889C0 26.6072 1.39289 28 3.11111 28H24.8889C26.6072 28 28 26.6072 28 24.8889V3.11111C28 1.39289 26.6072 0 24.8889 0H3.11111ZM21.6214 8.42207L19.4216 6.22219L6.22222 19.4216L8.4221 21.6214L21.6214 8.42207Z" fill="#333645" style="transition: fill 0.2s ease-in-out 0s;"></path>
+                        </svg>
+                        ban - ban user from the server
+                    </h5>
+                    <i class="arrow-icon fa-solid fa-angle-down"></i>
+
+                </div>
+            </span>
+            <div id="collapsible-content-1" class="Collapsible__contentOuter" role="region" aria-labelledby="collapsible-trigger-1" style="height: 0px; transition: height 400ms linear 0s; overflow: hidden;">
+                <div class="Collapsible__contentInner">
+                    <div class="cmdDis">
+                        <div class="line"></div>
+                        <label class="usage">Usage</label>
+                        <main class="usageDisplay">/ban <small class="discordmention">[user] (reason)</small> 
+                            </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+<br>
+
+
+        <div class="Collapsible">
+            <span id="collapsible-trigger-1" class="Collapsible__trigger is-closed" aria-expanded="false" aria-disabled="false" aria-controls="collapsible-content-1" role="button" onclick="toggleCollapsible('collapsible-content-1', this)">
+                <div class="cmdShow">
+                    <h5>
+                        <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px;" class="a7a1000">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.11111 0C1.39289 0 0 1.39289 0 3.11111V24.8889C0 26.6072 1.39289 28 3.11111 28H24.8889C26.6072 28 28 26.6072 28 24.8889V3.11111C28 1.39289 26.6072 0 24.8889 0H3.11111ZM21.6214 8.42207L19.4216 6.22219L6.22222 19.4216L8.4221 21.6214L21.6214 8.42207Z" fill="#333645" style="transition: fill 0.2s ease-in-out 0s;"></path>
+                        </svg>
+                        unban - remove ban of user
+                    </h5>
+                    <i class="arrow-icon fa-solid fa-angle-down"></i>
+
+                </div>
+            </span>
+           
+            <div id="collapsible-content-1" class="Collapsible__contentOuter" role="region" aria-labelledby="collapsible-trigger-1" style="height: 0px; transition: height 400ms linear 0s; overflow: hidden;">
+                <div class="Collapsible__contentInner">
+                    <div class="cmdDis">
+                        <div class="line"></div>
+                        <label class="usage">Usage</label>
+                        <main class="usageDisplay">/unban<small class="discordmention">[user] (reason)</small> 
+                            </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <br>
+
+
+        <div class="Collapsible">
+            <span id="collapsible-trigger-1" class="Collapsible__trigger is-closed" aria-expanded="false" aria-disabled="false" aria-controls="collapsible-content-1" role="button" onclick="toggleCollapsible('collapsible-content-1', this)">
+                <div class="cmdShow">
+                    <h5>
+                        <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px;" class="a7a1000">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.11111 0C1.39289 0 0 1.39289 0 3.11111V24.8889C0 26.6072 1.39289 28 3.11111 28H24.8889C26.6072 28 28 26.6072 28 24.8889V3.11111C28 1.39289 26.6072 0 24.8889 0H3.11111ZM21.6214 8.42207L19.4216 6.22219L6.22222 19.4216L8.4221 21.6214L21.6214 8.42207Z" fill="#333645" style="transition: fill 0.2s ease-in-out 0s;"></path>
+                        </svg>
+                        kick - kick user from the server
+                    </h5>
+                    <i class="arrow-icon fa-solid fa-angle-down"></i>
+
+                </div>
+            </span>
+           
+            <div id="collapsible-content-1" class="Collapsible__contentOuter" role="region" aria-labelledby="collapsible-trigger-1" style="height: 0px; transition: height 400ms linear 0s; overflow: hidden;">
+                <div class="Collapsible__contentInner">
+                    <div class="cmdDis">
+                        <div class="line"></div>
+                        <label class="usage">Usage</label>
+                        <main class="usageDisplay">/kick<small class="discordmention">[user] (reason)</small> 
+                            </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <br>
+
+
+        <div class="Collapsible">
+            <span id="collapsible-trigger-1" class="Collapsible__trigger is-closed" aria-expanded="false" aria-disabled="false" aria-controls="collapsible-content-1" role="button" onclick="toggleCollapsible('collapsible-content-1', this)">
+                <div class="cmdShow">
+                    <h5>
+                        <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px;" class="a7a1000">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.11111 0C1.39289 0 0 1.39289 0 3.11111V24.8889C0 26.6072 1.39289 28 3.11111 28H24.8889C26.6072 28 28 26.6072 28 24.8889V3.11111C28 1.39289 26.6072 0 24.8889 0H3.11111ZM21.6214 8.42207L19.4216 6.22219L6.22222 19.4216L8.4221 21.6214L21.6214 8.42207Z" fill="#333645" style="transition: fill 0.2s ease-in-out 0s;"></path>
+                        </svg>
+                        mute - mute user from text channel
+                    </h5>
+                    <i class="arrow-icon fa-solid fa-angle-down"></i>
+
+                </div>
+            </span>
+           
+            <div id="collapsible-content-1" class="Collapsible__contentOuter" role="region" aria-labelledby="collapsible-trigger-1" style="height: 0px; transition: height 400ms linear 0s; overflow: hidden;">
+                <div class="Collapsible__contentInner">
+                    <div class="cmdDis">
+                        <div class="line"></div>
+                        <label class="usage">Usage</label>
+                        <main class="usageDisplay">/mute<small class="discordmention"> [user] (time ends with m,h,d,mo,y) (reason)
+
+                        </small> 
+                            </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <br>
+
+
+        <div class="Collapsible">
+            <span id="collapsible-trigger-1" class="Collapsible__trigger is-closed" aria-expanded="false" aria-disabled="false" aria-controls="collapsible-content-1" role="button" onclick="toggleCollapsible('collapsible-content-1', this)">
+                <div class="cmdShow">
+                    <h5>
+                        <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px;" class="a7a1000">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.11111 0C1.39289 0 0 1.39289 0 3.11111V24.8889C0 26.6072 1.39289 28 3.11111 28H24.8889C26.6072 28 28 26.6072 28 24.8889V3.11111C28 1.39289 26.6072 0 24.8889 0H3.11111ZM21.6214 8.42207L19.4216 6.22219L6.22222 19.4216L8.4221 21.6214L21.6214 8.42207Z" fill="#333645" style="transition: fill 0.2s ease-in-out 0s;"></path>
+                        </svg>
+                        unmute - unmute user from text channel
+                    </h5>
+                    <i class="arrow-icon fa-solid fa-angle-down"></i>
+
+                </div>
+            </span>
+           
+            <div id="collapsible-content-1" class="Collapsible__contentOuter" role="region" aria-labelledby="collapsible-trigger-1" style="height: 0px; transition: height 400ms linear 0s; overflow: hidden;">
+                <div class="Collapsible__contentInner">
+                    <div class="cmdDis">
+                        <div class="line"></div>
+                        <label class="usage">Usage</label>
+                        <main class="usageDisplay">/unmute<small class="discordmention"> [user] 
+
+                        </small> 
+                            </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <br>
+
+
+        <div class="Collapsible">
+            <span id="collapsible-trigger-1" class="Collapsible__trigger is-closed" aria-expanded="false" aria-disabled="false" aria-controls="collapsible-content-1" role="button" onclick="toggleCollapsible('collapsible-content-1', this)">
+                <div class="cmdShow">
+                    <h5>
+                        <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px;" class="a7a1000">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.11111 0C1.39289 0 0 1.39289 0 3.11111V24.8889C0 26.6072 1.39289 28 3.11111 28H24.8889C26.6072 28 28 26.6072 28 24.8889V3.11111C28 1.39289 26.6072 0 24.8889 0H3.11111ZM21.6214 8.42207L19.4216 6.22219L6.22222 19.4216L8.4221 21.6214L21.6214 8.42207Z" fill="#333645" style="transition: fill 0.2s ease-in-out 0s;"></path>
+                        </svg>
+                        clear - delete messages on channel
+                    </h5>
+                    <i class="arrow-icon fa-solid fa-angle-down"></i>
+
+                </div>
+            </span>
+           
+            <div id="collapsible-content-1" class="Collapsible__contentOuter" role="region" aria-labelledby="collapsible-trigger-1" style="height: 0px; transition: height 400ms linear 0s; overflow: hidden;">
+                <div class="Collapsible__contentInner">
+                    <div class="cmdDis">
+                        <div class="line"></div>
+                        <label class="usage">Usage</label>
+                        <main class="usageDisplay">/clear<small class="discordmention">(number of messages)
+
+                        </small> 
+                            </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <br>
+
+
+        <div class="Collapsible">
+            <span id="collapsible-trigger-1" class="Collapsible__trigger is-closed" aria-expanded="false" aria-disabled="false" aria-controls="collapsible-content-1" role="button" onclick="toggleCollapsible('collapsible-content-1', this)">
+                <div class="cmdShow">
+                    <h5>
+                        <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px;" class="a7a1000">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.11111 0C1.39289 0 0 1.39289 0 3.11111V24.8889C0 26.6072 1.39289 28 3.11111 28H24.8889C26.6072 28 28 26.6072 28 24.8889V3.11111C28 1.39289 26.6072 0 24.8889 0H3.11111ZM21.6214 8.42207L19.4216 6.22219L6.22222 19.4216L8.4221 21.6214L21.6214 8.42207Z" fill="#333645" style="transition: fill 0.2s ease-in-out 0s;"></path>
+                        </svg>
+                        lock - lock text channel
+                    </h5>
+                    <i class="arrow-icon fa-solid fa-angle-down"></i>
+
+                </div>
+            </span>
+           
+            <div id="collapsible-content-1" class="Collapsible__contentOuter" role="region" aria-labelledby="collapsible-trigger-1" style="height: 0px; transition: height 400ms linear 0s; overflow: hidden;">
+                <div class="Collapsible__contentInner">
+                    <div class="cmdDis">
+                        <div class="line"></div>
+                        <label class="usage">Usage</label>
+                        <main class="usageDisplay">/lock<small class="discordmention">(channel) (reason)
+
+                        </small> 
+                            </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <br>
+
+
+        <div class="Collapsible">
+            <span id="collapsible-trigger-1" class="Collapsible__trigger is-closed" aria-expanded="false" aria-disabled="false" aria-controls="collapsible-content-1" role="button" onclick="toggleCollapsible('collapsible-content-1', this)">
+                <div class="cmdShow">
+                    <h5>
+                        <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px;" class="a7a1000">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.11111 0C1.39289 0 0 1.39289 0 3.11111V24.8889C0 26.6072 1.39289 28 3.11111 28H24.8889C26.6072 28 28 26.6072 28 24.8889V3.11111C28 1.39289 26.6072 0 24.8889 0H3.11111ZM21.6214 8.42207L19.4216 6.22219L6.22222 19.4216L8.4221 21.6214L21.6214 8.42207Z" fill="#333645" style="transition: fill 0.2s ease-in-out 0s;"></path>
+                        </svg>
+                        unlock - unlock text channel
+                    </h5>
+                    <i class="arrow-icon fa-solid fa-angle-down"></i>
+
+                </div>
+            </span>
+           
+            <div id="collapsible-content-1" class="Collapsible__contentOuter" role="region" aria-labelledby="collapsible-trigger-1" style="height: 0px; transition: height 400ms linear 0s; overflow: hidden;">
+                <div class="Collapsible__contentInner">
+                    <div class="cmdDis">
+                        <div class="line"></div>
+                        <label class="usage">Usage</label>
+                        <main class="usageDisplay">/unlock<small class="discordmention">(channel)
+
+                        </small> 
+                            </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </main>
+      <script>
+        function openPage(pageId) {
+          // Hide all content divs
+          var contentDivs = document.querySelectorAll('.content');
+          contentDivs.forEach(function(div) {
+            div.style.display = 'none';
+          });
+      
+          // Remove 'active' class from all navbar links
+          var navbarLinks = document.querySelectorAll('.navbar a');
+          navbarLinks.forEach(function(link) {
+            link.classList.remove('active');
+          });
+      
+          // Show the selected content div
+          var selectedDiv = document.getElementById(pageId);
+          if (selectedDiv) {
+            selectedDiv.style.display = 'block';
+          }
+      
+          // Add 'active' class to the clicked navbar link
+          var clickedLink = document.querySelector('.navbar a.active');
+          if (clickedLink) {
+            clickedLink.classList.remove('active');
+          }
+      
+          var newActiveLink = document.querySelector('.navbar a[href="#' + pageId + '"]');
+          if (newActiveLink) {
+            newActiveLink.classList.add('active');
+          }
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+       var colls = document.querySelectorAll('.Collapsible__trigger');
+       var isOpen = false;
+
+       colls.forEach(function (coll) {
+           var content = coll.nextElementSibling;
+
+           // إغلاق جميع العناصر المطوية عند التحميل
+           content.style.height = "0px";
+
+           coll.addEventListener('click', function () {
+               isOpen = !isOpen; // تبديل حالة الانطواء
+
+               colls.forEach(function (otherColl) {
+                   var otherContent = otherColl.nextElementSibling;
+                   if (otherColl !== coll) {
+                       otherContent.style.height = "0px"; // إغلاق العناصر الأخرى
+                   }
+               });
+
+               // تبديل حالة العنصر الحالي
+               content.style.height = isOpen ? content.scrollHeight + "px" : "0px";
+           });
+       });
+   });
+   function toggleCollapsible(contentId, trigger) {
+    const content = document.getElementById(contentId);
+    const isOpen = content.classList.toggle('is-open');
+    trigger.setAttribute('aria-expanded', isOpen);
+    const arrowIcon = trigger.querySelector('.arrow-icon');
+    arrowIcon.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+}
+      </script>
+
+      
+
+
+
+<%- include('./partes/fot') %>

@@ -1,0 +1,83 @@
+<script>
+    const laptop = document.getElementById('laptop');
+
+document.addEventListener('mousemove', (e) => {
+    const { clientX, clientY } = e;
+    const { top, left, width, height } = laptop.getBoundingClientRect();
+    
+    const offsetX = (clientX - left - width / 2) / 20;
+    const offsetY = (clientY - top - height / 2) / 20;
+
+    laptop.style.transform = `rotate(-5deg) scale(1.05) translate(${offsetX}px, ${offsetY}px)`;
+});
+
+document.addEventListener('mouseleave', () => {
+    laptop.style.transform = 'rotate(-5deg) scale(1.05)';
+});
+
+
+var commandsData = [
+  { category: 'category1', name: 'Command 1', usage: 'Usage details for Command 1' },
+  { category: 'category1', name: 'Command 2', usage: 'Usage details for Command 2' },
+  { category: 'category2', name: 'Command 3', usage: 'Usage details for Command 3' },
+  { category: 'category2', name: 'Command 4', usage: 'Usage details for Command 4' }
+];
+
+function toggleCommands(category) {
+    var commandsCategory = document.getElementById(category);
+    commandsCategory.style.display = (commandsCategory.style.display === 'none') ? 'block' : 'none';
+}
+
+function showUsage(command) {
+    var commandUsage = document.getElementById('commandUsage');
+    commandUsage.innerHTML = 'Usage for ' + command;
+    // Add command usage details here
+}
+
+function searchCommands() {
+    var searchInput = document.getElementById('searchInput').value.toLowerCase();
+    var commandsList = document.querySelector('.commands-list');
+    commandsList.innerHTML = ''; // Clear previous commands
+
+    commandsData.forEach(function(command) {
+        if (command.name.toLowerCase().includes(searchInput)) {
+            var commandElement = document.createElement('div');
+            commandElement.className = 'command';
+            commandElement.textContent = command.name;
+            commandElement.onclick = function() {
+                showUsage(command.name);
+            };
+            commandsList.appendChild(commandElement);
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+    const header = document.querySelector('header');
+
+    menuToggle.addEventListener('click', function() {
+        nav.classList.toggle('show');
+    });
+
+    // تحريك الشريط العلوي عند التمرير
+    window.addEventListener('scroll', function() {
+        const scrolled = window.scrollY > 50;
+        header.classList.toggle('scrolled', scrolled);
+    });
+});
+
+const mobileToggle = document.getElementById("mobile-toggle");
+
+mobileToggle.addEventListener("click", () => {
+  document.querySelector(".nav-items").classList.toggle("active");
+});
+
+const navLinks = document.querySelectorAll(".nav-item").forEach((navItem) => {
+  navItem.addEventListener("click", () => {
+    document.querySelector(".nav-items").classList.toggle("active");
+  });
+});
+
+</script>

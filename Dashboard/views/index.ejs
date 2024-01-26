@@ -1,0 +1,130 @@
+<%- include('./partes/head') %>
+<%- include('./partes/indes&css') %>
+<%- include('./partes/indes&js') %>
+<%- include('./partes/loader') %>
+
+  <!-- Main Section -->
+  <div class="hero">
+    <div class="rounded-box" style="font-size: 20px;">
+        ProtectionPlus Is Beta Do you have any suggestions? You can send your suggestion to develop the website and the bot
+        <a href="/submit-suggestion" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #0e0e0e;">Submit-Suggestion</a>
+      </div>
+      <br><br>
+    <h1><span>ProtectionPlus,</span> your choice for server design</h1>
+    <div class="ctas">
+      <a href="" class="cta purple" style="text-decoration: none;">Invite To Discord</a>
+      <% if (user) { %>
+      <a href="/dashboard" class="cta dark" style="text-decoration: none;">Dashboard</a>
+      
+      <% } else { %>
+      <a href="/login" class="cta dark" style="text-decoration: none;">Login</a>
+      <% } %>
+    </div>
+  </div>
+
+
+  <!--scrol-->
+  <center>
+  <div class="scrolldown" style="--color: skyblue">
+    <div class="chevrons">
+        <div class="chevrondown"></div>
+        <div class="chevrondown"></div>
+    </div>
+</div>
+</center>
+<br><br><br><br><br><br><br><br><br>
+<!--End-->
+  <!-- Features -->
+  <div class="features">
+    <h3>All the Advantages you need</h3>
+    <h6>Ready-made Advantages to choose from</h6>
+    <div class="features-list">
+      <div class="feature">
+        <div class="content">
+            <svg style="color: #725ff4;
+            height: 75px;
+            width: 75px;" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="door-open" class="svg-inline--fa fa-door-open " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M560 448H512V113.5c0-27.25-21.5-49.5-48-49.5L352 64.01V128h96V512h112c8.875 0 16-7.125 16-15.1v-31.1C576 455.1 568.9 448 560 448zM280.3 1.007l-192 49.75C73.1 54.51 64 67.76 64 82.88V448H16c-8.875 0-16 7.125-16 15.1v31.1C0 504.9 7.125 512 16 512H320V33.13C320 11.63 300.5-4.243 280.3 1.007zM232 288c-13.25 0-24-14.37-24-31.1c0-17.62 10.75-31.1 24-31.1S256 238.4 256 256C256 273.6 245.3 288 232 288z"></path></svg>
+          <h2>Welcome</h2>
+          <p>
+            Welcome to Bot Protection Plus offers you many advantages, including specifying the welcome room and specifying the welcome message, and there are many variables in order to provide you with the greatest possible amount of information about the joining member.              </p>
+        </div>
+        <img src="https://cdn.discordapp.com/attachments/948687785219461120/1198341955537621112/image.png?ex=65be8dea&is=65ac18ea&hm=d2726fd9ca4201b52fc84f8488679890c35670182732cef8be08118a94b04f75&" alt="purple website" />
+      </div>
+      <div class="feature">
+        <div class="content">
+          <i class="fa-solid fa-earth-asia" style=" height: 75px; width: 75px;"></i>
+          <h2>Logs</h2>
+          <p>
+            Bot Protection Plus provides all the logs to your server that are very special because it makes you know everything about the server from any change that occurred in the administration in modifying the server from ROMs, messages, and members.              </p>
+        </div>
+        <img src="https://cdn.discordapp.com/attachments/948687785219461120/1198341955537621112/image.png?ex=65be8dea&is=65ac18ea&hm=d2726fd9ca4201b52fc84f8488679890c35670182732cef8be08118a94b04f75&" alt="purple website" />
+      </div>
+      <div class="feature">
+        <div class="content">
+            <svg style="color: #725ff4;
+            height: 75px;
+            width: 75px;" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="lock" class="svg-inline--fa fa-lock " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M80 192V144C80 64.47 144.5 0 224 0C303.5 0 368 64.47 368 144V192H384C419.3 192 448 220.7 448 256V448C448 483.3 419.3 512 384 512H64C28.65 512 0 483.3 0 448V256C0 220.7 28.65 192 64 192H80zM144 192H304V144C304 99.82 268.2 64 224 64C179.8 64 144 99.82 144 144V192z"></path></svg> 
+        <h2>Protection</h2>
+          <p>
+            Protection for your server from vandals
+             Protection Plus bot will protect your server from vandals and hackers.
+          </p>
+        </div>
+        <img src="https://cdn.discordapp.com/attachments/948687785219461120/1198341955537621112/image.png?ex=65be8dea&is=65ac18ea&hm=d2726fd9ca4201b52fc84f8488679890c35670182732cef8be08118a94b04f75&" alt="purple website" />
+      </div>
+    </div>
+  </div>
+  <!-- Details 
+  <div class="details">
+    <h2>About Us Details</h2>
+    <h6>A set of details explaining who we are for those who don't know us</h6>
+    <div class="details-list">
+      <div class="detail">
+        <i class="fa-solid fa-earth-asia"></i>
+        <h3>Detail 1</h3>
+        <p>
+          Explanation of detail 1 Explanation of detail 1 Explanation of detail 1 Explanation of detail 1 Explanation of detail 1 Explanation of detail 1
+        </p>
+      </div>
+      <div class="detail">
+        <i class="fa-solid fa-earth-asia"></i>
+        <h3>Detail 2</h3>
+        <p>
+          Explanation of detail 2 Explanation of detail 2 Explanation of detail 2 Explanation of detail 2 Explanation of detail 2 Explanation of detail 2 Explanation of detail 2
+        </p>
+      </div>
+      <div class="detail">
+        <i class="fa-solid fa-earth-asia"></i>
+        <h3>Detail 3</h3>
+        <p>
+          Explanation of detail 3 Explanation of detail 3 Explanation of detail 3 Explanation of detail 3 Explanation of detail 3 Explanation of detail 3 Explanation of detail 3
+        </p>
+      </div>
+      <div class="detail">
+        <i class="fa-solid fa-earth-asia"></i>
+        <h3>Detail 4</h3>
+        <p>
+          Explanation of detail 4 Explanation of detail 4 Explanation of detail 4 Explanation of detail 4 Explanation of detail 4 Explanation of detail 4 Explanation of detail 4
+        </p>
+      </div>
+      <div class="detail">
+        <i class="fa-solid fa-earth-asia"></i>
+        <h3>Detail 5</h3>
+        <p>
+          Explanation of detail 5 Explanation of detail 5 Explanation of detail 5 Explanation of detail 5 Explanation of detail 5 Explanation of detail 5 Explanation of detail 5
+        </p>
+      </div>
+      <div class="detail">
+        <i class="fa-solid fa-earth-asia"></i>
+        <h3>Detail 6</h3>
+        <p>
+          Explanation of detail 6 Explanation of detail 6 Explanation of detail 6 Explanation of detail 6 Explanation of detail 6 Explanation of detail 6 Explanation of detail 6
+        </p>
+      </div>
+    </div>
+  </div>
+  -->
+</main>
+
+
+<%- include('./partes/fot') %>

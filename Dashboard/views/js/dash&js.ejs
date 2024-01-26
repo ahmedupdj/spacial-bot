@@ -1,0 +1,80 @@
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const userProfile = document.getElementById('userProfile');
+      const dropdownMenu = document.getElementById('dropdownMenu');
+  
+      userProfile.addEventListener('click', function (event) {
+        event.stopPropagation(); // تجنب إغلاق القائمة عند النقر داخلها
+        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+      });
+  
+      document.addEventListener('click', function () {
+        dropdownMenu.style.display = 'none';
+      });
+  
+      // تفعيل الرموز من Font Awesome
+      const icons = document.getElementsByClassName('arrow-icon');
+      Array.from(icons).forEach(icon => {
+        icon.classList.add('fas', 'fa-angle-down');
+      });
+    });
+  </script>
+<script>
+    // SIDEBAR TOGGLE
+
+let sidebarOpen = false;
+const sidebar = document.getElementById('sidebar');
+
+function openSidebar() {
+  if (!sidebarOpen) {
+    sidebar.classList.add('sidebar-responsive');
+    sidebarOpen = true;
+  }
+}
+
+function closeSidebar() {
+  if (sidebarOpen) {
+    sidebar.classList.remove('sidebar-responsive');
+    sidebarOpen = false;
+  }
+}
+
+let changesSaved = true; // Track if changes are saved initially
+
+// Function to show the notification bar
+function showNotification() {
+  document.getElementById('notification-bar').style.display = 'block';
+}
+
+// Function to hide the notification bar
+function hideNotification() {
+  document.getElementById('notification-bar').style.display = 'none';
+}
+
+// Function to save changes
+function saveChanges() {
+  // Add your logic to save changes
+  // For demonstration purposes, we'll simulate saving by changing the background color
+  document.body.style.backgroundColor = '#c8e6c9'; // Light green background
+  changesSaved = true;
+  hideNotification();
+}
+
+// Function to reset changes
+function resetChanges() {
+  // Add your logic to reset changes
+  // For demonstration purposes, we'll reset the background color to white
+  document.body.style.backgroundColor = '#fff'; // White background
+  changesSaved = true;
+  hideNotification();
+}
+
+// Example: Check changes before leaving the page
+window.onbeforeunload = function () {
+  if (!changesSaved) {
+    return 'You have unsaved changes. Are you sure you want to leave?';
+  }
+};
+
+</script>

@@ -1,0 +1,44 @@
+<%- include('../partes/head') %>
+<%- include('../partes/indes&css') %>
+<%- include('../partes/indes&js') %>
+<%- include('../css/guilds&css') %>
+<body>
+    <div class="content">
+        <h2>Choose your server</h2>
+
+        <div class="servers">
+            <% 
+                // فرز السيرفرات بحيث تظهر السيرفرات التي البوت فيها أولاً
+                const sortedGuilds = guilds.sort((a, b) => {
+                    const botInA = bot.guilds.cache.get(a.id) ? -1 : 1;
+                    const botInB = bot.guilds.cache.get(b.id) ? -1 : 1;
+                    return botInA - botInB;
+                });
+
+                sortedGuilds.forEach((guild, index) => { %>
+                    <div class="server">
+                        <div class="icon-and-name">
+                            <% if (guild.icon) { %>
+                                <img src="https://cdn.discordapp.com/icons/<%= guild.id %>/<%= guild.icon %>.png?size=512" alt="<%= guild.name %> Icon" class="server-icon">
+                            <% } else { %>
+                                <!-- Use a default image or some placeholder -->
+                                <img src="https://cdn.glitch.com/82fe990a-7942-42e3-9790-39807ccdb9f6%2Ficon-404-dark.png?v=1602427904949" alt="<%= guild.name %> Icon" class="server-icon">
+                            <% } %>
+                            <p class="guild-name"><%= guild.name %></p>
+                        </div>
+
+                        <!-- Add condition to check if the bot is in the guild -->
+                        <% if (bot.guilds.cache.get(guild.id)) { %>
+                            <a href="/server/<%= guild.id %>" class="button1 edit">Manage</a>
+                        <% } else { %>
+                            <p class="guild-name" style="color: rgb(255, 52, 52);">Bot not in this server</p>
+                            <a href="https://discord.com/api/oauth2/authorize?client_id=947952564803096676&permissions=8&scope=bot&guild_id=<%= guild.id %>" class="button1 add">Add Bot</a>
+                        <% } %>
+                    </div>
+                <% }); %>
+        </div>
+    </div>
+</main>
+</body>
+
+<%- include('../partes/fot') %>

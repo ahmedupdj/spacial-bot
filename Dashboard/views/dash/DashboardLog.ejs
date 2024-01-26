@@ -1,0 +1,30 @@
+<!-- dash/DashboardLog.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Logs</title>
+</head>
+<body>
+    <h1>Dashboard Logs</h1>
+
+    <% if (dashboardLogs && dashboardLogs.length > 0) { %>
+        <ul>
+            <% dashboardLogs.forEach(log => { %>
+                <li>
+                    <p>User: <%= log.username || 'N/A' %></p>
+                    <p>Action: <%= log.action || 'N/A' %></p>
+                    <p>Details: <%= log.details || 'N/A' %></p>
+                    <p>Timestamp: <%= log.timestamp || 'N/A' %></p>
+                </li>
+            <% }); %>
+        </ul>
+    <% } else { %>
+        <p>No logs available.</p>
+    <% } %>
+
+    <!-- Add any additional HTML or styling as needed -->
+</body>
+</html>

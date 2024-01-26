@@ -1,0 +1,503 @@
+<%- include('../css/dash&css') %>
+<%- include('../partes/meta') %>
+  <body>
+    <div class="grid-container">
+
+      <!-- Header -->
+      <header class="header">
+        <div class="menu-icon" onclick="openSidebar()">
+          <span class="material-icons-outlined">menu</span>
+        </div>
+        <div class="header-left">
+            <center>
+            <img src="https://cdn.discordapp.com/emojis/1080382925641629776.webp?size=44&quality=lossless" alt="">
+        </center>
+        </div>
+        <div class="header-right" id="header-right">
+            <div id="loader" class="loader"></div>
+            <div class="user-profile" id="userProfile">
+                <div id="userContent" class="user-content">
+                <img src="https://cdn.discordapp.com/avatars/<%=user.id%>/<%=user.avatar%>" alt="User Avatar" class="user-avatar">
+                <div class="user-info">
+                  <span class="user-name"><%= user.username %></span>
+                  <i class="arrow-icon fas fa-angle-down"></i>
+                </div>
+                <ul class="dropdown-menu" id="dropdownMenu">
+                  <a href="/dashboard">
+                    <span class="fas fa-server"></span> My Servers
+                  </a>
+                  <hr>
+                  <a href="/Premium">
+                    <span class="fas fa-star" style="position: relative; left: -15px; color: gold;"></span> Premium
+                  </a>
+                  <hr>
+                  <a href="رابط دعم الخادم">
+                    <span class="fab fa-discord" style="position: relative; left: 17px;"></span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Support Server
+                  </a>
+                </ul>
+              
+            </div>
+          </div>
+                  
+      </header>
+      <!-- End Header -->
+<style>
+  #dropdownContent {
+        display: none;
+        animation: fadeInDown 0.6s ease-out; /* Add fade-in animation */
+    }
+
+    .hide {
+        animation: fadeOutUp 0.6s ease-in; /* Add fade-out animation */
+        animation-fill-mode: forwards; /* Keep the last frame of the animation */
+    }
+
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeOutUp {
+        from {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        to {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+    }
+.loader {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid rgba(187, 187, 187, 0.2);
+  border-top-color: transparent;
+  animation: rot1 1.2s linear infinite;
+}
+
+@keyframes rot1 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.user-content {
+  display: none;
+}
+</style>
+
+<script>
+function showLoader() {
+  document.getElementById("loader").style.display = "block";
+  document.getElementById("userContent").style.display = "none";
+}
+
+function hideLoader() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("userContent").style.display = "block";
+}
+
+// بعد فترة الانتظار، قم بإخفاء اللودر وعرض المحتوى
+setTimeout(function() {
+  hideLoader();
+}, 4000); // 3000 مللي ثانية أو 3 ثوان
+</script>
+
+      <!-- Sidebar -->
+      <aside id="sidebar">
+        <a href="/" style="text-decoration: none;">
+        <div class="sidebar-title">
+            <div class="sidebar-brand">
+                <img src="https://cdn.discordapp.com/avatars/874557276692836382/9080414c585da45c93415cd71ff11ade.jpg?size=1024" height="40px" width="40px" alt="" style="position: relative; top: 10px; left: -10px;">
+             <p style="position: relative; left: 40px; top: -40px; color: #fff; ">ProtectionPlus</p>
+            </div>
+        </a>
+            <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+        </div>
+    <style>
+      .server {
+        background-color: rgb(15, 15, 15);
+        position: relative;
+        top: -50px;
+        left: 10px;
+        width: 260px;
+        height: 50px;
+      }
+      .server a {
+        text-decoration: none;
+        color: #fff;
+      }
+
+      #dropdownContent {
+        background-color: rgb(15, 15, 15);
+        position: relative;
+        top: -50px;
+      }
+      .NavigationHeader {
+    color: #b8b8b8!important;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    list-style: none;
+    padding: 6px 10px;
+    text-transform: uppercase;
+}
+.line {
+    background-color: #ffffff0f;
+    border-radius: 60px;
+    height: 1px;
+    margin: 8px 20px;
+}
+    </style>
+             <div class="server" id="serverDropdown">
+
+
+              <a href="#" id="dropdownTrigger">
+                  <% if (guild.icon) { %>
+                      <img src="https://cdn.discordapp.com/icons/<%= guild.id %>/<%= guild.icon %>.png?size=512" alt="<%= guild.name %> Icon" height="40px" width="40px" style="position: relative; left: 5px; top: 5px;">
+                  <% } else { %>
+                      <!-- Use a default image or some placeholder -->
+                      <img src="https://cdn.glitch.com/82fe990a-7942-42e3-9790-39807ccdb9f6%2Ficon-404-dark.png?v=1602427904949" alt="<%= guild.name %> Icon" height="40px" width="40px" style="position: relative; left: 5px; top: 5px;">
+                  <% } %>
+          
+                  <h4 style="position: relative; top: -43px; left: 50px;"><%= guild.name %></h4>
+              </a>
+          
+              <div id="dropdownContent" style="display: none;">
+                  <!-- Add your dropdown content here -->
+                  <ul id="serverLoader">
+                      <li style="position: relative; left: -40px;">
+                          <a href="/server/<%= guild.id %>">
+                              <% if (guild.icon) { %>
+                                  <img src="https://cdn.discordapp.com/icons/<%= guild.id %>/<%= guild.icon %>.png?size=512" alt="<%= guild.name %> Icon" height="40px" width="40px" style="position: relative; left: 5px; top: 10px;">
+                              <% } else { %>
+                                  <!-- Use a default image or some placeholder -->
+                                  <img src="https://cdn.glitch.com/82fe990a-7942-42e3-9790-39807ccdb9f6%2Ficon-404-dark.png?v=1602427904949" alt="<%= guild.name %> Icon" height="40px" width="40px" style="position: relative; left: 5px; top: 10px;">
+                              <% } %>
+          
+                              <h4 style="position: relative; top: -45px; left: 50px;"><%= guild.name %></h4>
+                          </a>
+                      </li>
+                      <li style="margin-top: -30px; position: relative; left: -40px;">
+                          <hr>
+                          <a href="/dashboard" style="position: relative; left: 20px;"><span class="fas fa-plus"></span> Add new server</a>
+                          <br>
+                      </li>
+                  </ul>
+              
+              </div>
+          
+              <script>
+                  // Add click event listener to toggle dropdown
+                  const dropdownTrigger = document.getElementById('dropdownTrigger');
+                  const dropdownContent = document.getElementById('dropdownContent');
+          
+                  dropdownTrigger.addEventListener('click', () => {
+                      // Toggle the display of dropdown content
+                      dropdownContent.style.display = (dropdownContent.style.display === 'none') ? 'block' : 'none';
+                  });
+          
+
+
+              </script>
+          </div>
+          
+          
+        <ul class="sidebar-list">
+          <li class="NavigationHeader">Settings</li>
+
+            <li class="sidebar-list-item">
+                <a href="/server/<%= guild.id %>">
+                    <span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="eye" class="svg-inline--fa fa-eye " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M279.6 160.4C282.4 160.1 285.2 160 288 160C341 160 384 202.1 384 256C384 309 341 352 288 352C234.1 352 192 309 192 256C192 253.2 192.1 250.4 192.4 247.6C201.7 252.1 212.5 256 224 256C259.3 256 288 227.3 288 192C288 180.5 284.1 169.7 279.6 160.4zM480.6 112.6C527.4 156 558.7 207.1 573.5 243.7C576.8 251.6 576.8 260.4 573.5 268.3C558.7 304 527.4 355.1 480.6 399.4C433.5 443.2 368.8 480 288 480C207.2 480 142.5 443.2 95.42 399.4C48.62 355.1 17.34 304 2.461 268.3C-.8205 260.4-.8205 251.6 2.461 243.7C17.34 207.1 48.62 156 95.42 112.6C142.5 68.84 207.2 32 288 32C368.8 32 433.5 68.84 480.6 112.6V112.6zM288 112C208.5 112 144 176.5 144 256C144 335.5 208.5 400 288 400C367.5 400 432 335.5 432 256C432 176.5 367.5 112 288 112z"></path></svg>
+                    </span> Overview
+                </a>
+            </li>
+            <li class="sidebar-list-item">
+                <a href="#">
+                  <span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="gear" class="svg-inline--fa fa-gear " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M495.9 166.6C499.2 175.2 496.4 184.9 489.6 191.2L446.3 230.6C447.4 238.9 448 247.4 448 256C448 264.6 447.4 273.1 446.3 281.4L489.6 320.8C496.4 327.1 499.2 336.8 495.9 345.4C491.5 357.3 486.2 368.8 480.2 379.7L475.5 387.8C468.9 398.8 461.5 409.2 453.4 419.1C447.4 426.2 437.7 428.7 428.9 425.9L373.2 408.1C359.8 418.4 344.1 427 329.2 433.6L316.7 490.7C314.7 499.7 307.7 506.1 298.5 508.5C284.7 510.8 270.5 512 255.1 512C241.5 512 227.3 510.8 213.5 508.5C204.3 506.1 197.3 499.7 195.3 490.7L182.8 433.6C167 427 152.2 418.4 138.8 408.1L83.14 425.9C74.3 428.7 64.55 426.2 58.63 419.1C50.52 409.2 43.12 398.8 36.52 387.8L31.84 379.7C25.77 368.8 20.49 357.3 16.06 345.4C12.82 336.8 15.55 327.1 22.41 320.8L65.67 281.4C64.57 273.1 64 264.6 64 256C64 247.4 64.57 238.9 65.67 230.6L22.41 191.2C15.55 184.9 12.82 175.3 16.06 166.6C20.49 154.7 25.78 143.2 31.84 132.3L36.51 124.2C43.12 113.2 50.52 102.8 58.63 92.95C64.55 85.8 74.3 83.32 83.14 86.14L138.8 103.9C152.2 93.56 167 84.96 182.8 78.43L195.3 21.33C197.3 12.25 204.3 5.04 213.5 3.51C227.3 1.201 241.5 0 256 0C270.5 0 284.7 1.201 298.5 3.51C307.7 5.04 314.7 12.25 316.7 21.33L329.2 78.43C344.1 84.96 359.8 93.56 373.2 103.9L428.9 86.14C437.7 83.32 447.4 85.8 453.4 92.95C461.5 102.8 468.9 113.2 475.5 124.2L480.2 132.3C486.2 143.2 491.5 154.7 495.9 166.6V166.6zM256 336C300.2 336 336 300.2 336 255.1C336 211.8 300.2 175.1 256 175.1C211.8 175.1 176 211.8 176 255.1C176 300.2 211.8 336 256 336z"></path></svg>
+                  </span> Commands
+                </a>
+            </li>
+            <div class="line"></div>
+            <li class="NavigationHeader">MODERATION</li>
+
+            <li class="sidebar-list-item">
+              <a href="/server/<%= guild.id %>/protection">
+                  <span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="shield-blank" class="svg-inline--fa fa-shield-blank " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M496 127.1C496 381.3 309.1 512 255.1 512C204.9 512 16 385.3 16 127.1c0-19.41 11.7-36.89 29.61-44.28l191.1-80.01c4.906-2.031 13.13-3.701 18.44-3.701c5.281 0 13.58 1.67 18.46 3.701l192 80.01C484.3 91.1 496 108.6 496 127.1z"></path></svg>
+                  </span> Protection
+              </a>
+          </li>
+            <li class="sidebar-list-item">
+                <a href="#">
+                    <span class="fas fa-users"></span> Customers
+                </a>
+            </li>
+            <li class="NavigationHeader">UTILITY</li>
+
+            <li class="sidebar-list-item">
+                <a href="/server/<%= guild.id %>/welcome">
+                    <span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="door-open" class="svg-inline--fa fa-door-open " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M560 448H512V113.5c0-27.25-21.5-49.5-48-49.5L352 64.01V128h96V512h112c8.875 0 16-7.125 16-15.1v-31.1C576 455.1 568.9 448 560 448zM280.3 1.007l-192 49.75C73.1 54.51 64 67.76 64 82.88V448H16c-8.875 0-16 7.125-16 15.1v31.1C0 504.9 7.125 512 16 512H320V33.13C320 11.63 300.5-4.243 280.3 1.007zM232 288c-13.25 0-24-14.37-24-31.1c0-17.62 10.75-31.1 24-31.1S256 238.4 256 256C256 273.6 245.3 288 232 288z"></path></svg>
+                    </span> Welcome & Leave
+                </a>
+            </li>
+            <li class="sidebar-list-item-active">
+                <a href="/server/<%= guild.id %>/AutoRole">
+                    <span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="user-check" class="svg-inline--fa fa-user-check " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M274.7 304H173.3C77.61 304 0 381.6 0 477.3C0 496.5 15.52 512 34.66 512H413.3C432.5 512 448 496.5 448 477.3C448 381.6 370.4 304 274.7 304zM224 256c70.7 0 128-57.31 128-128S294.7 0 224 0C153.3 0 96 57.31 96 128S153.3 256 224 256zM632.3 134.4c-9.703-9-24.91-8.453-33.92 1.266l-87.05 93.75l-38.39-38.39c-9.375-9.375-24.56-9.375-33.94 0s-9.375 24.56 0 33.94l56 56C499.5 285.5 505.6 288 512 288h.4375c6.531-.125 12.72-2.891 17.16-7.672l104-112C642.6 158.6 642 143.4 632.3 134.4z"></path></svg>
+                    </span> Auto Roles
+                </a>
+            </li>
+            <li class="sidebar-list-item">
+                <a href="/server/<%= guild.id %>/Logs">
+                    <span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="table-list" class="svg-inline--fa fa-table-list " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M0 96C0 60.65 28.65 32 64 32H448C483.3 32 512 60.65 512 96V416C512 451.3 483.3 480 448 480H64C28.65 480 0 451.3 0 416V96zM64 160H128V96H64V160zM448 96H192V160H448V96zM64 288H128V224H64V288zM448 224H192V288H448V224zM64 416H128V352H64V416zM448 352H192V416H448V352z"></path></svg>
+                    </span> Log
+                </a>
+            </li>
+        </ul>
+    </aside>
+      <!-- End Sidebar -->
+
+       <!-- Main -->
+       <main class="main-container">
+        <div class="main-title">
+          <h2>Auto Roles</h2>
+        </div>
+
+       
+
+        <div class="charts">
+            <form action="/server/<%= guildId %>/AutoRole" method="POST" id="AutoRoleForm">
+          <div class="charts-card">
+            <div class="switch">
+            <label class="toggle-switch">
+                <input type="checkbox" name="isCodeEnabled" <%= serverSettings.isCodeEnabled ? 'checked' : '' %>>
+                <div class="toggle-switch-background">
+                    <div class="toggle-switch-handle"></div>
+                </div>
+            </label></div>
+            <h2 class="chart-title">Auto Roles Members</h2>
+            <center><p style="font-size: 20px;">Roles : </p></center>
+            <select id="selectedRole1" name="selectedRole1" class="charts-card-select">
+                <option value="" disabled <% if (!serverSettings.selectedRole1) { %>selected<% } %>>Select</option>
+                <% guild.roles.cache.each(role => { %>
+                    <option value="<%= role.id %>" <% if (serverSettings.selectedRole1 === role.id) { %>selected<% } %>><%= role.name %></option>
+                    <% }); %>
+              </select>
+              <br>
+              <br><br>
+              <hr>
+              <br>
+              <br>
+              <h2 class="chart-title">Auto Roles BOts</h2><center><p style="font-size: 20px;">Roles : </p></center>
+              <select id="selectedRole2" name="selectedRole2" class="charts-card-select">
+                  <option value="" disabled <% if (!serverSettings.selectedRole) { %>selected<% } %>>Select</option>
+                  <% guild.roles.cache.each(role => { %>
+                      <option value="<%= role.id %>" <% if (serverSettings.selectedRole2 === role.id) { %>selected<% } %>><%= role.name %></option>
+                  <% }); %>
+              </select>
+            </div>
+
+
+
+
+
+            <div class="saveFade css-1gzxeik" style="display: none; animation-delay: 0ms;">
+                <div class="savebar">
+                  <div>
+                    <div class="savemsg">Careful — you have unsaved changes!</div>
+                    <div class="saveflix">
+                      <button type="reset" class="reset" style="color: white;" onclick="resetChanges()">Reset</button>
+                      <button class="button" onclick="saveChanges()">
+                        <span class="button__text">Save</span>
+                        <div class="loader1" style="display: none;"></div>
+                      </button>
+                      
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+ 
+            </form>
+        </div>
+        
+      </main>
+      <!-- End Main -->
+ <style>
+      .css-1gzxeik {
+    animation-duration: 1000ms;
+    animation-timing-function: ease;
+    animation-delay: 0ms;
+    animation-name: animation-os2n7p;
+    animation-direction: normal;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+}
+.saveFade {
+    bottom: 0;
+    left: 20px;
+    position: absolute;
+    right: 20px;
+    z-index: 100;
+}
+@keyframes animation-os2n7p {
+  0% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+}
+.savebar {
+    background-color: #000;
+    border-radius: 7px;
+    bottom: 20px;
+    left: 20px;
+    margin: auto;
+    max-width: 740px;
+    position: fixed;
+    right: 20px;
+    z-index: 100;
+}
+.savebar div {
+    align-items: center;
+    display: flex;
+    padding: 5px 5px 5px 11px;
+}
+.savemsg {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.saveflix {
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: flex-end;
+}
+saveflix button {
+    font-size: 15px;
+    margin: 0 10px;
+}
+.reset {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    outline: inherit;
+    padding: 0;
+}
+.button {
+    background: #5e5e5e;
+    border: none;
+    border-radius: 2px;
+    color: #fff;
+    cursor: pointer;
+    margin: 4px;
+    outline: none;
+    padding: 8px 16px;
+    position: relative;
+}
+.button {
+  position: relative;
+}
+
+.loader1 {
+  border: 4px solid #333; /* Darker color */
+  border-top: 4px solid #666; /* Darker color */
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  animation: spin 1s linear infinite;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+    </style>
+
+<script>
+    var unsavedChanges = false;
+    
+    function handleChanges() {
+      unsavedChanges = true;
+      var saveFade = document.querySelector(".saveFade");
+      saveFade.style.display = "block";
+      fadeIn(saveFade);
+    }
+    
+    function showLoader() {
+      var button = document.querySelector(".button");
+      var loader = button.querySelector(".loader1");
+    
+      button.style.pointerEvents = "none"; // Disable button while loading
+      loader.style.display = "inline-block";
+    }
+    
+    function hideLoader() {
+      var button = document.querySelector(".button");
+      var loader = button.querySelector(".loader1");
+    
+      button.style.pointerEvents = "auto"; // Enable button after loading
+      loader.style.display = "none";
+    }
+    
+    function saveChanges() {
+      showLoader();
+    
+      // Simulate a server request delay (replace this with your actual AJAX call)
+      setTimeout(function () {
+        unsavedChanges = false;
+        var saveFade = document.querySelector(".saveFade");
+        hideLoader();
+        fadeOut(saveFade);
+      }, 3000); // Adjust the delay as needed
+    
+      // Perform content update here (use AJAX if appropriate)
+    }
+    
+    function resetChanges() {
+      document.getElementById("AutoRoleForm").reset();
+      var saveFade = document.querySelector(".saveFade");
+      hideElement(saveFade);
+      unsavedChanges = false;
+    }
+    
+    function fadeIn(element) {
+      element.style.opacity = 1;
+    }
+    
+    function hideElement(element) {
+      element.style.display = "none";
+    }
+    
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelector(".reset").addEventListener("click", resetChanges);
+      document.querySelector(".button").addEventListener("click", saveChanges);
+    });
+    
+    document.getElementById("AutoRoleForm").addEventListener("input", handleChanges);
+    
+    
+      </script>
+        

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protection Settings</title>
+</head>
+<body>
+    <h1>Protection Settings</h1>
+
+    <% if (protectionSettings) { %>
+        <p>Protection is currently <%= protectionSettings.isLinkProtectionEnabled ? 'enabled' : 'disabled' %>.</p>
+        <p>Allowed Link Channel: <%= protectionSettings.allowedLinkChannelId || 'Not specified' %></p>
+    <% } else { %>
+        <p>Protection settings not found for this server.</p>
+    <% } %>
+
+    <form method="post" action="/server/<%= guildId %>/protection">
+        <label for="isCodeEnabled">Enable Code Protection:</label>
+        <input type="checkbox" name="isCodeEnabled" <%= protectionSettings && protectionSettings.isCodeEnabled ? 'checked' : '' %>><br>
+
+        <label for="isLinkProtectionEnabled">Enable Link Protection:</label>
+        <input type="checkbox" name="isLinkProtectionEnabled" <%= protectionSettings && protectionSettings.isLinkProtectionEnabled ? 'checked' : '' %>><br>
+
+        <label for="allowedLinkChannelId">Allowed Link Channel ID:</label>
+        <% guild.channels.cache.filter(channel => channel.type === 0).each(channel => { %>
+          <input type="text" name="allowedLinkChannelId" value="<%= protectionSettings ? protectionSettings.allowedLinkChannelId : '' %>"><br>
+
+            <% }); %>
+
+
+
+        <label for="isAntiBotEnabled">Is Anti-Bot Enabled:</label>
+        <input type="checkbox" name="isAntiBotEnabled" <%= protectionSettings && protectionSettings.isAntiBotEnabled ? 'checked' : '' %>>
+        
+        <label for="allowedBotIds">Allowed Bot IDs (comma-separated):</label>
+        <input type="text" name="allowedBotIds" value="<%= protectionSettings ? protectionSettings.allowedBotIds.join(', ') : '' %>"><br>
+        
+        <button type="submit">Save Settings</button>
+    </form>
+
+</body>
+</html>

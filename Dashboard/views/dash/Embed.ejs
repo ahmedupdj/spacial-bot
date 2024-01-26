@@ -1,0 +1,28 @@
+<form action="/server/<%= guildId %>/Embed" method="post">
+    <label for="channel">Target Channel:</label>
+    
+        <select id="channel" name="embedData.channel">
+            <% guild.channels.cache.filter(channel => channel.type === 0).each(channel => { %>
+                <!-- Display each channel as an option in the dropdown -->
+                <option value="<%= channel.id %>" <%= serverSettings.embedData.channel === channel.id ? 'selected' : '' %>><%= channel.name %></option>
+            <% }); %>
+        </select>
+        
+
+    </select>
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title">
+
+    <label for="description">Description:</label>
+    <textarea id="description" name="description"></textarea>
+
+    <label for="color">Color:</label>
+    <input type="color" id="color" name="color">
+
+
+    <!-- Add other fields as needed -->
+
+
+
+    <button type="submit">Save Embed</button>
+</form>
